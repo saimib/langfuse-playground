@@ -96,12 +96,12 @@ const FormattedView: React.FC<FormattedViewProps> = ({
 
       // Debounce the actual update to parent
       // This reduces re-renders while typing
-      const timeoutId = setTimeout(() => {
-        console.log("Updating message at index:", index, e.target.value);
-        onUpdate(index, e.target.value);
-      }, 300);
+      // const timeoutId = setTimeout(() => {
+      //   console.log("Updating message at index:", index, e.target.value);
+      //   onUpdate(index, e.target.value);
+      // }, 300);
 
-      return () => clearTimeout(timeoutId);
+      // return () => clearTimeout(timeoutId);
     };
 
     const handleFocus = () => {
