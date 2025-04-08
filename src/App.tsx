@@ -1,24 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import ConfigPanel from "./components/ConfigPanel";
+import DocumentationOverlay from "./components/DocumentationOverlay";
+import Header from "./components/Header";
+import PromptPanel from "./components/PromptPanel";
+import { useConfig } from "./hooks/useConfig";
+import { useMessages } from "./hooks/useMessages";
+import { usePrompt } from "./hooks/usePrompt";
 
 function App() {
+  const [showDocumentation, setShowDocumentation] = useState(false);
+
+  const {
+    promptState,
+    resetPrompt,
+    toggleFormat,
+    addHumanMessage,
+    addAIMessage,
+    addToolMessage,
+  } = usePrompt();
+
+  const {
+    configState,
+    updateModel,
+    updateProvider,
+    updateApiKey,
+    updateTemperature,
+    updateMetadata,
+  } = useConfig();
+
+  const { currentInput, isLoading } = useMessages(
+    addHumanMessage,
+    addAIMessage,
+    addToolMessage
+  );
+
+  const handleDocumentationClick = () => {
+    setShowDocumentation(!showDocumentation);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header onDocumentationClick={handleDocumentationClick} />
+      <div className="app-content">
+        <div className="main-panels">
+          <PromptPanel
+            promptState={promptState}
+            resetPrompt={resetPrompt}
+            toggleFormat={toggleFormat}
+            currentInput={currentInput}
+            configState={configState}
+            updateMetadata={updateMetadata}
+          />
+          <ConfigPanel
+            configState={configState}
+            updateModel={updateModel}
+            updateProvider={updateProvider}
+            updateApiKey={updateApiKey}
+            updateTemperature={updateTemperature}
+          />
+        </div>
+      </div>
+      <DocumentationOverlay
+        showDocumentation={showDocumentation}
+        onClose={handleDocumentationClick}
+      />
     </div>
   );
 }

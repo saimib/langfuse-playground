@@ -1,0 +1,113 @@
+.formatted-view {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.editable-message {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.message-role-label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+/* Role-specific label colors */
+.editable-message[data-role="system"] .message-role-label {
+  color: #0066cc;
+}
+
+.editable-message[data-role="human"] .message-role-label {
+  color: #333;
+}
+
+.editable-message[data-role="ai"] .message-role-label {
+  color: #2e7d32;
+}
+
+.editable-message[data-role="tool"] .message-role-label {
+  color: #d32f2f;
+}
+
+/* Removed view-mode styles as we're using only textarea now */
+
+.edit-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.edit-textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Add role-specific styling to textareas */
+.editable-message[data-role="system"] .edit-textarea {
+  background-color: #f8f9fa;
+  font-family: monospace;
+}
+
+.editable-message[data-role="human"] .edit-textarea {
+  background-color: #f5f5f5;
+}
+
+.editable-message[data-role="ai"] .edit-textarea {
+  background-color: #f0f7ff;
+}
+
+.editable-message[data-role="tool"] .edit-textarea {
+  background-color: #f5f5f5;
+  font-family: monospace;
+}
+
+.message-container {
+  width: 100%;
+}
+
+/* Removed system-message styles as we're using direct textarea editing */
+
+/* Add message button styles */
+.add-message-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.add-message-button:hover {
+  background-color: #e9e9e9;
+  border-color: #999;
+  color: #333;
+}
+
+.add-message-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}

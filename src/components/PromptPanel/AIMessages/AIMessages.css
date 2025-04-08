@@ -1,0 +1,63 @@
+.ai-messages {
+  margin-bottom: 1.5rem;
+}
+
+.ai-message {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ai-avatar {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.ai-avatar svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.ai-content {
+  flex-grow: 1;
+}
+
+.ai-content p {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.tool-call {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.tool-call-header {
+  background-color: #e0e0e0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.tool-call-content {
+  padding: 0.75rem;
+}
+
+.tool-call-content pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}

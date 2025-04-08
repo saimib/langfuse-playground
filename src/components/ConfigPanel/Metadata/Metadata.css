@@ -1,0 +1,29 @@
+.metadata {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.metadata-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.metadata-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.metadata-label {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.metadata-value {
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 500;
+}

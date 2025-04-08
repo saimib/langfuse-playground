@@ -1,0 +1,42 @@
+.tool-messages {
+  margin-bottom: 1.5rem;
+}
+
+.tool-message {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tool-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.tool-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.tool-content {
+  flex-grow: 1;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+}
+
+.tool-content pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}

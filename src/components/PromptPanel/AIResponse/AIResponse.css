@@ -1,0 +1,68 @@
+.ai-response {
+  margin-bottom: 1.5rem;
+}
+
+.response-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ai-avatar {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.ai-avatar svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.response-content {
+  flex-grow: 1;
+}
+
+.response-text {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.email-response {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.email-header {
+  background-color: #f0f0f0;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.email-header p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.email-body {
+  padding: 0.75rem;
+}
+
+.email-body p {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.email-body p:last-child {
+  margin-bottom: 0;
+}

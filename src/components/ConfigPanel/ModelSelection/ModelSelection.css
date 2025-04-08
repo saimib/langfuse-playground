@@ -1,0 +1,31 @@
+.model-selection {
+  margin-bottom: 1.5rem;
+}
+
+.config-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.model-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #333;
+  background-color: #fff;
+}
+
+.model-input:focus {
+  outline: none;
+  border-color: #b0b0b0;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.model-input::placeholder {
+  color: #999;
+}
