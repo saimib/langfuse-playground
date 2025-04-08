@@ -151,7 +151,7 @@ const PromptPanel: React.FC<PromptPanelProps> = ({
         {
           role: "assistant",
           content:
-            "Error: Failed to get a response from the API. Please check your API key and settings.",
+            "" + error || "An error occurred while processing your request.",
         },
       ]);
     } finally {
@@ -199,6 +199,10 @@ const PromptPanel: React.FC<PromptPanelProps> = ({
           <FormattedView
             jsonValue={jsonValue}
             updateMessage={handleUpdateMessage}
+            deleteMessage={(index) => {
+              const updatedMessages = jsonValue.filter((_, i) => i !== index);
+              setJsonValue(updatedMessages);
+            }}
             currentInput={currentInput}
             isLoading={isLoading}
             handleNewMessage={handleInputChange}
@@ -216,16 +220,35 @@ const PromptPanel: React.FC<PromptPanelProps> = ({
               <p>Sample JSON format:</p>
               <pre>{`[
   {
-    "role": "system",
-    "content": "You are a helpful assistant."
+    "role": "system" | "user" | "assistant" | "human" | "ai",
+    "content": "message content"
   },
+  // For function messages:
   {
-    "role": "user",
-    "content": "Hello!"
+    "role": "function",
+    "name": "function_name",
+    "content": "function response"
   },
+  // For tool messages:
+  {
+    "role": "tool",
+    "tool_call_id": "tool_call_id",
+    "content": "tool response"
+  },
+  // For assistant messages with tool calls:
   {
     "role": "assistant",
-    "content": "Hi there! How can I help you today?"
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_abc123",
+        "type": "function",
+        "function": {
+          "name": "function_name",
+          "arguments": "{\"param1\":\"value1\",\"param2\":\"value2\"}"  // Must be a JSON string!
+        }
+      }
+    ]
   }
 ]`}</pre>
             </div>

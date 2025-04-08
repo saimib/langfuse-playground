@@ -119,11 +119,19 @@
   background-color: #f5f5f5;
   border-radius: 4px;
   font-size: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
 }
 
 .json-editor-info p {
   margin: 0 0 5px 0;
   font-weight: 500;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  padding-bottom: 5px;
+  z-index: 1;
 }
 
 .json-editor-info pre {
@@ -133,4 +141,5 @@
   font-size: 12px;
   line-height: 1.4;
   color: #333;
+  overflow: visible;
 }

@@ -4,6 +4,7 @@ export interface Message {
   content: string;
   timestamp: Date;
   toolCallId?: string; // Optional property for tool messages
+  toolCalls?: ToolCall[]; // Optional property for AI messages with tool calls
 }
 
 export interface SystemPrompt {
